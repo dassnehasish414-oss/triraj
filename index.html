@@ -1,54 +1,924 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<center>   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>TRIRAJ SERVICES</title>
 
+
     <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-            font-size: 18px;
-        }
 
-        h1 {
-            font-size: 30px;
-        }
+            background: #f4f7fb;
 
-        img {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-        }
+            color: #222;
 
-        p {
             line-height: 1.6;
         }
 
-        a {
-            font-size: 20px;
-            display: block;
-            margin: 15px;
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0d47a1,
+                    #1976d2
+                );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 32px 15px;
         }
+
+
+        header h1 {
+
+            font-size: 32px;
+
+            margin-bottom: 8px;
+        }
+
+
+        header p {
+
+            font-size: 16px;
+        }
+
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        .navbar {
+
+            background: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 8px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.15);
+
+            padding: 6px 10px;
+
+            overflow-x: auto;
+
+            scrollbar-width: none;
+        }
+
+
+        .navbar::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .navbar a {
+
+            color: #0d47a1;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            padding: 14px 22px;
+
+            border-radius: 8px;
+
+            white-space: nowrap;
+
+            transition: 0.3s;
+        }
+
+
+        .navbar a:hover {
+
+            background: #0d47a1;
+
+            color: white;
+        }
+
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            margin: 35px auto;
+
+            padding: 0 20px;
+        }
+
+
+
+        /* =========================
+           BANNER
+        ========================= */
+
+        .banner {
+
+            background: white;
+
+            padding: 12px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.12);
+
+            margin-bottom: 32px;
+        }
+
+
+        .banner img {
+
+            width: 100%;
+
+            max-height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+
+            display: block;
+        }
+
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .card {
+
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 15px;
+
+            margin-bottom: 32px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.08);
+
+            scroll-margin-top: 80px;
+        }
+
+
+        .card h2 {
+
+            color: #0d47a1;
+
+            margin-bottom: 15px;
+
+            font-size: 24px;
+        }
+
+
+        .card p {
+
+            font-size: 17px;
+        }
+
+
+
+        /* =========================
+           SERVICES SECTION
+        ========================= */
+
+        .main-service {
+
+            text-align: center;
+        }
+
+
+        .main-service h2 {
+
+            margin-bottom: 15px;
+        }
+
+
+        .main-service p {
+
+            margin-bottom: 22px;
+        }
+
+
+        /* =========================
+           TRIRAJ SERVICES BUTTON
+        ========================= */
+
+        .service-button {
+
+            display: block;
+
+            width: 100%;
+
+            background: #0d47a1;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 15px 20px;
+
+            border-radius: 9px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .service-button:hover {
+
+            background: #08306f;
+
+            transform: translateY(-2px);
+        }
+
+
+
+        /* =========================
+           APPLY FOR LOAN BUTTON
+        ========================= */
+
+        .loan-button {
+
+            display: block;
+
+            width: 100%;
+
+            background: #f57c00;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 15px 20px;
+
+            border-radius: 9px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            margin-top: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .loan-button:hover {
+
+            background: #e65100;
+
+            transform: translateY(-2px);
+        }
+
+
+
+        /* =========================
+           FOUNDER
+        ========================= */
+
+        .founder {
+
+            text-align: center;
+        }
+
+
+        .founder-photo {
+
+            width: 150px;
+
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #0d47a1;
+
+            margin: 10px auto 18px;
+
+            display: block;
+        }
+
+
+        .founder h3 {
+
+            color: #0d47a1;
+
+            font-size: 23px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .founder p {
+
+            margin-bottom: 8px;
+        }
+
+
+
+        /* =========================
+           SOCIAL BUTTONS
+        ========================= */
+
+        .buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-top: 25px;
+        }
+
+
+        .buttons a {
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 14px 25px;
+
+            border-radius: 9px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        /* Facebook */
+
+        .facebook {
+
+            background: #1877f2;
+        }
+
+
+        /* WhatsApp */
+
+        .whatsapp {
+
+            background: #25d366;
+        }
+
+
+        /* Call */
+
+        .call {
+
+            background: #0d47a1;
+        }
+
+
+        .buttons a:hover {
+
+            transform: translateY(-2px);
+
+            opacity: 0.9;
+        }
+
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+
+            text-align: center;
+        }
+
+
+        .contact p {
+
+            margin-bottom: 5px;
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #0d47a1;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 22px 10px;
+
+            margin-top: 10px;
+        }
+
+
+        footer p {
+
+            font-size: 14px;
+
+            margin: 3px 0;
+        }
+
+
+
+        /* =========================
+           MOBILE DESIGN
+        ========================= */
+
+        @media (max-width: 600px) {
+
+
+            /* Header */
+
+            header {
+
+                padding: 27px 12px;
+            }
+
+
+            header h1 {
+
+                font-size: 27px;
+            }
+
+
+            header p {
+
+                font-size: 15px;
+            }
+
+
+
+            /* Navbar */
+
+            .navbar {
+
+                justify-content: flex-start;
+
+                gap: 5px;
+
+                padding: 6px 8px;
+            }
+
+
+            .navbar a {
+
+                font-size: 14px;
+
+                padding: 13px 16px;
+            }
+
+
+
+            /* Main */
+
+            .container {
+
+                margin: 25px auto;
+
+                padding: 0 15px;
+            }
+
+
+
+            /* Banner */
+
+            .banner {
+
+                padding: 10px;
+
+                margin-bottom: 28px;
+            }
+
+
+
+            /* Cards */
+
+            .card {
+
+                padding: 22px;
+
+                margin-bottom: 30px;
+            }
+
+
+            .card h2 {
+
+                font-size: 21px;
+
+                margin-bottom: 13px;
+            }
+
+
+            .card p {
+
+                font-size: 16px;
+            }
+
+
+
+            /* Services */
+
+            .service-button,
+            .loan-button {
+
+                width: 100%;
+
+                text-align: center;
+
+                padding: 14px 15px;
+            }
+
+
+
+            /* Founder */
+
+            .founder-photo {
+
+                width: 130px;
+
+                height: 130px;
+            }
+
+
+
+            /* Social Buttons */
+
+            .buttons {
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+
+            .buttons a {
+
+                width: 100%;
+
+                text-align: center;
+            }
+
+        }
+
     </style>
+
 </head>
+
+
+
 <body>
-    <h1>TRIRAJ SERVICES</h1>
-    <img src="image1.jpeg" width="400" height="200">
-    <p>Hello, Welcome to TRIRAJ SERVICES...<br>
-    TRIPRAJ SERVICES is a trusted service platform <br>dedicated to providing
-helpful and reliable services to our customers.<br> We aim to make it
-easy for people to connect with us and get the support they need.</p>
 
-    <p>For more information and updates, please check our social media platforms below ↓</p>
-    
-    <a href="https://advisor.turtlemintinsurance.com/profile/TRI3642377/TRIRAJ_SERVICES">TRIRAJ SERVICES</a><br><br>
 
-    <a href="https://www.facebook.com/share/1J3NBjd1V9/">Facebook</a><br>
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-    <a href="https://wa.me/message/2LFFP5FBMZB6A1">Whatsapp</a>
-</center>
+    <header id="home">
+
+        <h1>TRIRAJ SERVICES</h1>
+
+        <p>
+            Trusted • Helpful • Reliable Services
+        </p>
+
+    </header>
+
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav class="navbar">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#services">
+            Services
+        </a>
+
+        <a href="#founder">
+            Founder
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
+
+    <main class="container">
+
+
+        <!-- =========================
+             BANNER
+        ========================= -->
+
+        <div class="banner">
+
+            <img
+                src="image1.jpeg"
+                alt="TRIRAJ SERVICES"
+            >
+
+        </div>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================= -->
+
+        <section class="card">
+
+            <h2>
+                Welcome to TRIRAJ SERVICES
+            </h2>
+
+            <p>
+                TRIRAJ SERVICES is a trusted service
+                platform dedicated to providing helpful
+                and reliable services to our customers.
+            </p>
+
+            <br>
+
+            <p>
+                We aim to make it easy for people to
+                connect with us and get the support
+                they need.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             SERVICES
+        ========================= -->
+
+        <section
+            class="card main-service"
+            id="services"
+        >
+
+            <h2>
+                Our Services
+            </h2>
+
+            <p>
+                For more information about our services,
+                please visit our official service profile.
+            </p>
+
+
+            <!-- TRIRAJ SERVICES -->
+
+            <a
+                class="service-button"
+                href="https://advisor.turtlemintinsurance.com/profile/TRI3642377/TRIRAJ_SERVICES"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                TRIRAJ SERVICES
+            </a>
+
+
+            <!-- APPLY FOR LOAN -->
+
+            <a
+                class="loan-button"
+                href="https://wee.bnking.in/c/ZjRlZTUyY"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Apply for Loan
+            </a>
+
+        </section>
+
+
+
+        <!-- =========================
+             FOUNDER
+        ========================= -->
+
+        <section
+            class="card founder"
+            id="founder"
+        >
+
+            <h2>
+                Founder
+            </h2>
+
+
+            <img
+                class="founder-photo"
+                src="tr.jpeg"
+                alt="Founder"
+            >
+
+
+            <h3>
+               TRIDIP DAS
+            </h3>
+
+
+            <p>
+                Founder and owner of TRIRAJ SERVICES.
+            </p>
+
+
+            <p>
+                Dedicated to providing helpful,
+                reliable and customer-friendly services.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
+
+        <section
+            class="card contact"
+            id="contact"
+        >
+
+            <h2>
+                Connect With Us
+            </h2>
+
+
+            <p>
+                For more information and updates,
+                connect with us through our social
+                platforms or contact us directly.
+            </p>
+
+
+            <div class="buttons">
+
+
+                <!-- FACEBOOK -->
+
+                <a
+                    class="facebook"
+                    href="https://www.facebook.com/share/1J3NBjd1V9/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Facebook
+                </a>
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    class="whatsapp"
+                    href="https://wa.me/message/2LFFP5FBMZB6A1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                </a>
+
+
+                <!-- PHONE -->
+
+                <a
+                    class="call"
+                    href="tel:+918787895552"
+                >
+                    📞 Call
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             GET IN TOUCH
+        ========================= -->
+
+        <section class="card contact">
+
+            <h2>
+                Get In Touch
+            </h2>
+
+            <p>
+                Have any questions or need assistance?
+                Feel free to contact us.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 TRIRAJ SERVICES
+        </p>
+
+        <p>
+            All Rights Reserved
+        </p>
+
+    </footer>
+
+
 </body>
+
 </html>
